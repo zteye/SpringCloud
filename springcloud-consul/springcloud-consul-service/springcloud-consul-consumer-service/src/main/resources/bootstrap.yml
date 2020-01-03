@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: consul-consumer
+  cloud:    consul:      host: localhost
+      port: 8500
+      config:        enabled: true
+        format: yaml
+        prefix: config
+        profile-separator: ':'
+        data-key: data
