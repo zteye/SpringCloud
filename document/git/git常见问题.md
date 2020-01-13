@@ -19,7 +19,7 @@ git config --global http.postBuffer 1048576000
 
 将http.postBuffer设置的尽量大，例如git config --global http.postBuffer 524288000  （500M）
  git config --global http.postBuffer 1048576000  (1G)。再大的应该是依次类推吧
- 因为下载的时候不止是工程数据，还有其它配置数据，总量会大于工程数据量，所以设置的缓存大小一定要比工程大小多一些。 
+ 因为下载的时候不止是工程数据，还有其它配置数据，总量会大于工程数据量，所以设置的缓存大小一定要比工程大小多一些。
 
 3.配置git的最低速和最低速时间
 
