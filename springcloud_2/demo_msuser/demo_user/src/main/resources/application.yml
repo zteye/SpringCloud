@@ -1,0 +1,20 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: user
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        tags: version=1.0,author=zteye
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        service-name: ${spring.application.name}
+        ip-address: ${spring.cloud.client.ip-address}
+        prefer-ip-address: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.137.100:3306/demo_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
