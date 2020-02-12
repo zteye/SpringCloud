@@ -142,4 +142,10 @@ public class UserController {
         List<User> list = userService.findAll();
         return new Result<List<User>>(true, StatusCode.OK,"查询成功",list) ;
     }
+    
+    @GetMapping("/findByUsername/{username}")
+    public User findByUsername(@PathVariable String username) {
+        User user = userService.findById(username);
+        return user;
+    }
 }

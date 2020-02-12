@@ -28,12 +28,24 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis-reactive</artifactId>
-			<version>2.1.5.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>com.demo</groupId>
-			<artifactId>demo_common_db</artifactId>
+			<artifactId>demo_common</artifactId>
 			<version>1.0.0</version>
+			   <exclusions>
+        <!--
+            1. webflux与webmvc不兼容，否则会项目启动不起来
+        -->
+        <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </exclusion>
+        <exclusion>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+        </exclusions>
 		</dependency>		
 	</dependencies>
 	<dependencyManagement>

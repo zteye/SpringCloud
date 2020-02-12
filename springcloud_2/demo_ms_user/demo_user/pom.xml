@@ -9,6 +9,10 @@
 	</parent>
 	<artifactId>demo_user</artifactId>
 	<dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>com.demo</groupId>
 			<artifactId>demo_common_db</artifactId>
