@@ -66,6 +66,7 @@ class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic()        //启用Http基本身份验证
                 .and()
                 .formLogin()       //启用表单身份验证
+                .loginPage("/login.html").permitAll()
                 .and()
                 .authorizeRequests()    //限制基于Request请求访问
                 .anyRequest()
